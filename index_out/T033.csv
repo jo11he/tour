@@ -1,0 +1,7 @@
+	Volume	Type	URL DATA	Start Date	End Date
+0	cors_0176	ODF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr8-v10/cors_0176/tigr8_180/odf/s31tigf2007_180_0924xmmmv1.odf	2007-180T09:24:02.0	2007-181T03:06:29.0
+1	cors_0176	EOP	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr8-v10/cors_0176/tigr8_ancillary/eop/s30tigs2006_230_2007_231.eop	2006-230T01:00:00.0	2007-231T23:59:00.0
+2	cors_0176	ION	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr8-v10/cors_0176/tigr8_ancillary/ion/s31tigf2007_152_2007_182.ion	2007-152T06:21:00.0	2007-182T20:38:00.0
+3	cors_0176	TRO	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr8-v10/cors_0176/tigr8_ancillary/tro/s31tigf2007_152_2007_182.tro	2007-152T03:00:00.0	2007-182T09:00:00.0
+4	cors_0176	CKF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr8-v10/cors_0176/tigr8_ancillary/ckf/s31tigs2007_177_2007_182.ckf	2007-177T00:00:00.0	2007-182T23:59:58.0
+5	cors_0176	SPK	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr8-v10/cors_0176/tigr8_ancillary/spk/s31tigs2007_170_2007_191.spk	2007-170T11:58:55.0	2007-191T11:58:55.0

@@ -1,0 +1,7 @@
+	Volume	Type	URL DATA	Start Date	End Date
+0	cors_0525	ODF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr19-v10/cors_0525/tigr19_075/odf/s88tigf2015_074_1315xmmmv1.odf	2015-074T14:15:06.0	2015-075T20:48:26.0
+1	cors_0525	CKF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr19-v10/cors_0525/tigr19_ancillary/ckf/s88tigf2015_074_2013_076.ckf	2015-074T21:55:44.0	2015-076T03:28:58.0
+2	cors_0525	EOP	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr19-v10/cors_0525/tigr19_ancillary/eop/s88tigf2014_159_2015_160.eop	2014-159T00:00:00.0	2015-160T00:00:00.0
+3	cors_0525	ION	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr19-v10/cors_0525/tigr19_ancillary/ion/s88tigf2015_060_2015_091.ion	2015-060T06:28:00.0	2015-091T06:44:00.0
+4	cors_0525	SPK	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr19-v10/cors_0525/tigr19_ancillary/spk/s88tigf2015_066_2015_116.spk	2015-066T11:58:55.0	2015-116T16:58:55.0
+5	cors_0525	TRO	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr19-v10/cors_0525/tigr19_ancillary/tro/s88tigf2015_060_2015_082.tro	2015-060T06:28:00.0	2015-082T06:44:00.0

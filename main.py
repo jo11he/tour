@@ -14,6 +14,7 @@ import urllib.request as request
 from URL_ROOTS import PDS_RSS_ROOT, NAIF_ROOT, df_column_keys, ancillary_data_shorts
 
 
+
 class CustomException(Exception):
     def __init__(self, msg):
         self.msg = msg
@@ -67,10 +68,10 @@ def read_index_file(flyby_id, df):
 
         index_dict[pds_volume_ids[i]] = content
 
-    return index_dict
+    return index_dict, PDS_RSS_ROOT.format(experiment_id)
 
 
-def create_entries_from_index_lines(lines, filter_on_extension=None):
+def create_entries_from_index_lines(lines, root_url, filter_on_extension=None):
     df_rows = []
 
     if filter_on_extension is None:
@@ -93,7 +94,7 @@ def create_entries_from_index_lines(lines, filter_on_extension=None):
                 # construct data url for df entry
                 data_url_root = line[1].rsplit('/', 1)[0]
                 data_type = data_url_root.rsplit('/', 1)[-1]
-                data_url = f'{data_url_root}/{line[2]}'.lower()
+                data_url = root_url + f'/{volume_id}' + f'/{data_url_root}/{line[2]}'.lower()
                 df_row.append(data_type)
                 df_row.append(data_url)
 
@@ -122,7 +123,7 @@ def check_df_content(df, key="Type"):
     return [odf, anc]
 
 
-def add_to_df_from_index(index, df, filter_for_ancillaries=None, primary_odf_shorts=None):
+def add_to_df_from_index(index, df, experiment_root_url, filter_for_ancillaries=None, primary_odf_shorts=None):
     if filter_for_ancillaries is None:
         filter_for_ancillaries = ancillary_data_shorts
 
@@ -143,7 +144,7 @@ def add_to_df_from_index(index, df, filter_for_ancillaries=None, primary_odf_sho
             else:
                 pass
 
-        odf_df_rows = create_entries_from_index_lines(odf_lines)
+        odf_df_rows = create_entries_from_index_lines(odf_lines, experiment_root_url)
         if len(odf_df_rows) > 0:
             new_odf_dat = pd.DataFrame(data=odf_df_rows, columns=df_column_keys)
             df = pd.concat([df, new_odf_dat], ignore_index=True)
@@ -152,7 +153,7 @@ def add_to_df_from_index(index, df, filter_for_ancillaries=None, primary_odf_sho
 
     if not bools[1]:  # anc missing
 
-        anc_df_rows = create_entries_from_index_lines(index.splitlines(), filter_for_ancillaries)
+        anc_df_rows = create_entries_from_index_lines(index.splitlines(), experiment_root_url, filter_for_ancillaries)
         if len(anc_df_rows) > 0:
             new_anc_dat = pd.DataFrame(data=anc_df_rows, columns=df_column_keys)
             df = pd.concat([df, new_anc_dat], ignore_index=True)
@@ -165,6 +166,9 @@ def add_to_df_from_index(index, df, filter_for_ancillaries=None, primary_odf_sho
 def interval_testing_w_datetime(start_0, end_0, ancillary_dates_list):
     # index 1, 2 are the bracketing intervals,
     # index 0 needs to be accomodated in brackets
+
+    # Hack to remove duplicates
+    ancillary_dates_list = list(dict.fromkeys(ancillary_dates_list))
 
     if len(ancillary_dates_list) == 0:
         raise ValueError(f"No ancillary time bracket given to test accommodation of odf coverage interval")
@@ -193,9 +197,8 @@ def interval_testing_w_datetime(start_0, end_0, ancillary_dates_list):
                              f"cannot be accomodated in available ancillary coverage brackets")
 
     else:
-        raise ValueError(f"Ancillary time bracket given to test accommodation of odf coverage interval "
-                         f"has invalid number of entries ({len(ancillary_dates_list)}) - "
-                         f"permissible number of entries (2) and (4) (corresponding to start+end for max 2 intervals)")
+        raise ValueError(f"Despite filtering for duplicate dates, ancillary_dates_list has length "
+                         f"{len(ancillary_dates_list)} - permissible values for the length of this list are (2) and (4)")
 
 
 def safe_dt_conversion(dt_str):
@@ -251,6 +254,9 @@ def tailor_ancillary_contents(df):
         elif ancillary_bracket == ancillary_dates_list[2:]:
             df.drop(ancillary_type_subdf.index[0], axis='index', inplace=True)
 
+        elif ancillary_bracket == ancillary_dates_list[:4]:  # sketch
+            df.drop(ancillary_type_subdf.index[2:], axis='index', inplace=True)
+
     return df
 
 
@@ -261,25 +267,29 @@ if __name__ == '__main__':
     tour_df = load_tour_csv()  # Press ⌘F8 to toggle the breakpoint.
 
     #flyby_ids = tour_df.index[[0, 5]]
-    flyby_ids = ["T011", "T074"]
+    flyby_ids = ["T011", "T022", "T033", "T045", "T068", "T074", "T089", "T099", "T110", "T122"]
+    flyby_ids = ["T122"]
+
     print(f"User defined list of flybys considered: {flyby_ids}")
     experiment_file_index = dict()
 
 
     # 2. iterate over the flybys and find index, get main gravity science pass, ancillary and start/end times
     for flyby_id in flyby_ids:
+
         print(flyby_id)
         index_df = pd.DataFrame(data=[], columns=df_column_keys)
-        index_dict = read_index_file(flyby_id, tour_df)
+        index_dict, exp_root_url = read_index_file(flyby_id, tour_df)
 
         for volume_id in list(index_dict):
             print(f"Searching index of repo {volume_id}...")
-            index_df = add_to_df_from_index(index_dict[volume_id], index_df)
+            index_df = add_to_df_from_index(index_dict[volume_id], index_df, exp_root_url)
 
         index_df = tailor_ancillary_contents(index_df)
 
         print(index_df["Type"])
         experiment_file_index[flyby_id] = index_df
+
 
 
     ######## experiment_file_index ######
@@ -288,6 +298,11 @@ if __name__ == '__main__':
     # where each item (by rows) is a data file (odf and ancillary) that is required in the context of main GS data around given flyby
 
     ######## Next up: Conceive mirroring data structure on local.
+
+    for key in list(experiment_file_index):
+        experiment_file_index[key].reset_index(drop=True).to_csv(f'index_out/{key}.csv', sep='\t')
+
+
 
     print("yeah dawg")
 

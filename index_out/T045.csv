@@ -1,0 +1,7 @@
+	Volume	Type	URL DATA	Start Date	End Date
+0	cors_0239	ODF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr11-v10/cors_0239/tigr11_212/odf/s42tigf2008_212_1609xmmmv1.odf	2008-212T16:09:26.0	2008-213T17:33:24.0
+1	cors_0239	ION	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr11-v10/cors_0239/tigr11_ancillary/ion/s42tigf2008_183_2008_214.ion	2008-183T06:21:00.0	2008-214T20:38:00.0
+2	cors_0239	TRO	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr11-v10/cors_0239/tigr11_ancillary/tro/s42tigf2008_183_2008_213.tro	2008-183T03:00:00.0	2008-213T09:00:00.0
+3	cors_0239	EOP	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr11-v10/cors_0239/tigr11_ancillary/eop/s42tigf2007_298_2008_299.eop	2007-298T01:00:00.0	2008-299T23:59:00.0
+4	cors_0239	CKF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr11-v10/cors_0239/tigr11_ancillary/ckf/s42tigf2008_212_2008_217.ckf	2008-212T00:00:01.0	2008-217T23:59:58.0
+5	cors_0239	SPK	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr11-v10/cors_0239/tigr11_ancillary/spk/s42tigf2008_206_2008_220.spk	2008-206T11:58:55.0	2008-220T11:58:55.0

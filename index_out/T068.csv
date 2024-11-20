@@ -1,0 +1,7 @@
+	Volume	Type	URL DATA	Start Date	End Date
+0	cors_0320	ODF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr15-v10/cors_0320/tigr15_139/odf/s60tigf2010_139_1500xmmmv1.odf	2010-139T20:13:04.0	2010-140T13:15:12.0
+1	cors_0320	SPK	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr15-v10/cors_0320/tigr15_ancillary/spk/s60tigs2010_132_2010_146.spk	2010-132T11:58:55.0	2010-146T05:58:55.0
+2	cors_0320	CKF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr15-v10/cors_0320/tigr15_ancillary/ckf/s60tigs2010_139_2010_144.ckf	2010-139T00:00:01.0	2010-143T23:59:57.0
+3	cors_0320	EOP	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr15-v10/cors_0320/tigr15_ancillary/eop/s60tigs2009_228_2010_229.eop	2009-228T01:00:00.0	2010-229T23:59:00.0
+4	cors_0320	ION	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr15-v10/cors_0320/tigr15_ancillary/ion/s60tigs2010_121_2010_152.ion	2010-121T06:21:00.0	2010-152T20:38:00.0
+5	cors_0320	TRO	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr15-v10/cors_0320/tigr15_ancillary/tro/s60tigs2010_121_2010_149.tro	2010-121T03:00:00.0	2010-149T09:00:00.0

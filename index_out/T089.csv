@@ -1,0 +1,7 @@
+	Volume	Type	URL DATA	Start Date	End Date
+0	cors_0394	EOP	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr17-v10/cors_0394/tigr17_ancillary/eop/s77tigf2012_133_2013_133.eop	2012-133T00:00:00.0	2013-133T00:00:00.0
+1	cors_0394	TRO	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr17-v10/cors_0394/tigr17_ancillary/tro/s77tigf2013_032_2013_059.tro	2013-032T06:28:00.0	2013-059T06:44:00.0
+2	cors_0394	ION	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr17-v10/cors_0394/tigr17_ancillary/ion/s77tigf2013_032_2013_060.ion	2013-032T06:28:00.0	2013-060T06:44:00.0
+3	cors_0394	CKF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr17-v10/cors_0394/tigr17_ancillary/ckf/s77tigf2013_047_2013_048.ckf	2013-047T00:00:03.0	2013-048T23:59:58.0
+4	cors_0394	SPK	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr17-v10/cors_0394/tigr17_ancillary/spk/s77tigf2013_038_2013_063.spk	2013-038T20:58:55.0	2013-063T03:58:55.0
+5	cors_0395	ODF	https://atmos.nmsu.edu/pdsd/archive/data/co-ssa-rss-1-tigr17-v10/cors_0395/tigr17_048/odf/s77tigf2013_047_1030xmmmv1.odf	2013-047T13:10:26.0	2013-048T15:16:19.0

@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="/opt/miniconda3" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="tudat-build-develop-tt" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (tudat-bundle)" project-jdk-type="Python SDK" />
 </project>
