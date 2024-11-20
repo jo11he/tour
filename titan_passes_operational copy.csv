@@ -1,0 +1,23 @@
+﻿# PDS Experiment Root,
+co-ssa-rss-1-{Experiment ID}-v10 \n
+Directory Index: ,{PDS Repo ID}/INDEX/INDEX.TAB,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+Flyby ID,Experiment ID,PDS Repo ID,Date,DOY,Year,,segment,2-way,3-way,segments
+,,,,,,,,,,
+T011,tigr3,cors_0133,27.02.,58,2006,,0,DSS-25,n/a,pre
+,,,,,,,1,DSS-25,DSS-34,central
+T022,tigr6,cors_0168,28.12.,362,2006,,0,DSS-55,DSS-25,pre
+,,,,,,,1,,,
+,,,,,,,2,,,
+T033,tigr8,cors_0176,29.06.,180,2007,,,,,
+T045,tigr11,cors_0239,30.07.,212,2008,,,,,
+T068,tigr15,cors_0320,19.05.,139,2010,,,,,
+T074,tigr16,"cors_0349, cors_0350",18.02.,49,2011,,,,,
+T089,tigr17,"cors_0394, cors_0395",16.02.,47,2013,,,,,
+T099,tigr18,"cors_0487, cors_0488",06.03.,65,2014,,,,,
+T110,tigr19,cors_0525,16.03.,75,2015,,,,,
+T122,tigr20,"cors_0566, cors_0567",09.08.,222,2016,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,note: start of tracking,,,,,,
